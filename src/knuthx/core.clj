@@ -77,7 +77,7 @@
 (defn knuth-x
   "Implementation of Donald Knuth's 'Algorithm X' based on the Wiki-page http://en.wikipedia.org/wiki/Knuth's_Algorithm_X"
   ([m] (remove empty?
-               (pseudoflatten
+               (pseudo-flatten
                 (knuth-x m [] (map list
                                    (range (count m)))))))
   ([m res rows]
@@ -106,5 +106,7 @@
 
 
 (knuth-x (shuffle testmatrix))
+
+
 
 
