@@ -89,20 +89,20 @@
          (let [column-count (count-true m)
                min-count (if (empty? column-count)
                            0
-                           (apply min column-count))]
-           (let [mincol-idx (ffirst (filter (fn [[a b]] (= b min-count))
-                                            (map vector
-                                                 (iterate inc 0)
-                                                 column-count)))]
-             (when mincol-idx
-               (map (fn [[re r m]]
-                      (knuth-x m
-                               (conj res (nth (flatten rows) re))
-                               (remove-from-matrix rows
-                                                   r
-                                                   '())))
-                    (map #(submatrix m %)
-                         (get-indices-where-true m mincol-idx :row)))))))))
+                           (apply min column-count))
+               mincol-idx (ffirst (filter (fn [[a b]] (= b min-count))
+                                          (map vector
+                                               (iterate inc 0)
+                                               column-count)))]
+           (when mincol-idx
+             (map (fn [[re r m]]
+                    (knuth-x m
+                             (conj res (nth (flatten rows) re))
+                             (remove-from-matrix rows
+                                                 r
+                                                 '())))
+                  (map #(submatrix m %)
+                       (get-indices-where-true m mincol-idx :row))))))))
 
 
 (knuth-x (shuffle testmatrix))

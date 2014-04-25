@@ -13,6 +13,13 @@
       <url>http://www.eclipse.org/legal/epl-v10.html</url>
     </license>
   </licenses>
+  <scm>
+    <connection>scm:git:git://github.com/phjeltman/clojure.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/phjeltman/clojure.git</developerConnection>
+    <tag>97885b99068a2c47e709620dac210c2afeee6ac6
+</tag>
+    <url>https://github.com/phjeltman/clojure</url>
+  </scm>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <testSourceDirectory>test</testSourceDirectory>
